@@ -1,0 +1,35 @@
+{
+  "pages":[
+    "pages/logs/logs",
+    "pages/index/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小程序",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#ccc",
+    "selectedColor": "#000",
+    "backgroundColor": "",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/jishi2.png",
+        "selectedIconPath": "images/jishi.png"
+      },{
+        "pagePath": "pages/logs/logs",
+        "text": "统计",
+        "iconPath": "images/tongji2.png",
+        "selectedIconPath": "images/tongji.png"
+      }
+    ]
+  },
+  
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

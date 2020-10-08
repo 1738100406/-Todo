@@ -1,0 +1,33 @@
+<view class="main" hidden="{{isShow}}">
+  <view class="slider">
+    <slider bindchange="sliderChange" activeColor="#E78075" min="1" max="120" show-value />
+  </view>
+  <view class="task_text">
+    <view class="task_selct">选择一个任务</view>
+    <view class="task_point">在接下的{{time}}分钟内，你将专注做这件事</view>
+  </view>
+  <view class="task_body">
+    <view class="task_item" wx:for="{{taskArr}}" wx:key="index" data-index="{{index}}" bindtap="changtask">
+      <view class="task_icon">
+        <image src="../../images/{{item.icon}}" mode="widthFix"></image>
+        <view class="item_txt {{index==activenum?'active':''}}">{{item.text}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="btn" bindtap="start">开始专注</view>
+</view>
+<view class="clock" hidden="{{!isShow}}">
+  <view class="proess">
+    <canvas canvas-id="proess_bg" class="proess_bg"></canvas>
+    <canvas canvas-id="proess_active" class="proess_active"></canvas>
+    <text class="proess_text">{{timeStr}}</text>
+  </view>
+  <view class="btns">
+    <view class="okbtn" bindtap="ok" wx:if="{{okShow}}">恭喜完成,请返回</view>
+    <view class="stopbtn" bindtap="stop" wx:if="{{stopShow}}">暂停计时</view>
+    <view class="continuedownbtn" wx:if="{{continuedownShow}}">
+      <view class="continuebtn" bindtap="continue" wx:if="{{continueShow}}">继续计时</view>
+      <view class="downbtn" bindtap="down" wx:if="{{downShow}}">放弃</view>
+    </view>
+  </view>
+</view>
